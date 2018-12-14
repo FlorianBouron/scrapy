@@ -4,7 +4,7 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
+from scrapy.exceptions import DropItem
 
 class MacbookCheck(object):
     def process_item(self, item, spider):
@@ -19,4 +19,6 @@ class MarkAsViable(object):
 			print('Link: ', item['link'])
 			print('Price: ', item['price'])
 			print('Title: ', item['title'], '\n')
+		else:
+			raise DropItem()
 		return item
