@@ -69,6 +69,10 @@ ITEM_PIPELINES = {
     'scraper.pipelines.MarkAsViable': 200,
 }
 
+# Feed exporters
+FEED_FORMAT = 'json'
+FEED_URI = 'tmp/macbooks.json'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
